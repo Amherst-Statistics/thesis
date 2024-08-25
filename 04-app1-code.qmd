@@ -1,0 +1,40 @@
+# Code availability {#sec-code}
+
+<!--
+The following reproducibility statement template is courtesy of Rob J. Hyndman and his Monash thesis template at https://robjhyndman.com/hyndsight/quarto_templates.html.
+
+Though it is recommended to include such a statement, the statement is optional and it should not be included if not true!
+
+You can learn more about the **renv** package here:
+https://rstudio.github.io/renv/articles/renv.html
+-->
+
+This thesis is written using Quarto with **renv** [@renv] to create a reproducible environment. All materials (including the data sets and source files) required to reproduce this document can be found at the Github repository [github.com/GITHUB-USERNAME/THESIS-REPO-NAME](https://github.com/github-username/thesis-repo-name). 
+
+This work is licensed under a [Creative Commons  Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
+
+<!--
+
+https://github.com/quarto-dev/quarto-cli/discussions/6650
+
+The type of code chunk below will correctly print all code within the same .qmd file but *cannot* pull code from other .qmd files within a project.
+
+-->
+
+<!--
+Include all source code below
+-->
+```{r}
+#| echo: true
+#| eval: false
+{{< include src/temp01-clean-wnba.R >}}
+```
+
+```{r}
+#| echo: true
+#| eval: false
+{{< include src/temp02-hello.R >}}
+```
+
+
+

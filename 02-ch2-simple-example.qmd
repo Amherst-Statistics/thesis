@@ -1,0 +1,94 @@
+# Simple examples {#sec-simple}
+
+```{r}
+#| label: setup
+#| include: false
+
+# Load packages
+library(tidyverse)
+library(gt)
+
+# Set default ggplot theme for document
+theme_set(theme_classic())
+# If using kableExtra tables, print blank cells instead of `NA`
+options(knitr.kable.NA = "")
+
+# Load data
+load("data/temp_wnba.RData")
+```
+
+## Figures
+
+Consider customizing your plot themes per-plot---as we do below to create @fig-wnba-ht<!---->---or changing the default `ggplot()` theme in your document within your `setup` code chunks using `ggplot2::theme_set()`.
+
+If **ggplot2** is loaded, the following code sets the default `ggplot()` theme to `theme_classic()`.
+<!-- 
+The markdown syntax below will use R syntax highlighting to display the code, but it is not a "true" code chunk in the sense that the code is displayed but not evaluated in the rendered document.
+-->
+
+```r
+theme_set(theme_classic())
+```
+
+```{r}
+#| label: fig-wnba-ht
+#| fig-cap: "Distribution of heights of WNBA players in the 2024 season."
+
+# Use Freedman-Diaconus rule to set binwidth
+ht_bw <- 2 * IQR(wnba$height) / nrow(wnba)^(1/3)
+
+# Create histogram of height faceted by player position
+ggplot(wnba, aes(height)) +
+  geom_histogram(binwidth = ht_bw) +
+  labs(x = "Height (in)",
+       y = "Count",
+       caption = "Source: https://www.espn.com/wnba/stats/player") +
+  theme_bw()
+```
+
+
+## Tables
+
+Your tables should be publication quality. Consider using [**gt**](https://gt.rstudio.com/articles/gt.html) [@gt] or  [**kableExtra**](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_pdf.pdf) [@kableExtra] to customize your tables. The [**gtsummary**](https://www.danieldsjoberg.com/gtsummary/) package [@gtsummary] may also come in handy.
+
+@tbl-ht-by-pos shows the average heights of WNBA players by position. 
+
+```{r}
+#| label: tbl-ht-by-pos
+#| tbl-cap: "Average WNBA player height by position."
+
+wnba |> 
+  group_by(position) |> 
+  summarize(mean_ht = mean(height)) |> 
+  gt() |> 
+  cols_label(
+    position = "Position",
+    mean_ht = "Average height (in)"
+  ) |> 
+  fmt_number(decimals = 1)
+```
+
+
+<!-- 
+The following section should be included at the end of each chapter that contains code.
+
+Note that this will include code from code chunks even if `eval` is set to `false`.
+-->
+
+## @sec-simple Code
+
+The following code was used to create @sec-simple.
+
+### Code within chapter
+```{r}
+#| echo: true
+#| eval: false
+#| ref-label: !expr knitr::all_labels()
+```
+
+### Code sourced from external scripts
+```{r}
+#| echo: true
+#| eval: false
+{{< include src/temp01-clean-wnba.R >}}
+```

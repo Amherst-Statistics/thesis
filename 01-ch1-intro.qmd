@@ -1,0 +1,177 @@
+# Intro to your Quarto Book thesis {#sec-intro}
+
+This template uses a Quarto Book project to generate your thesis document. This document includes important information about how to navigate this project directory and use the Quarto Book project. 
+
+
+## What's in this project directory?
+
+* `_extensions` folder: contains additional files for formatting the thesis. Do not delete, edit, or move this folder or its contents.
+
+* `_quarto.yml` file. Do not rename, move, or delete this file.
+  * This file controls the structure and formatting of your thesis.
+  * Update this file with your thesis information, the list of qmd files to include when rendering the document, and the name of your bibliography file.
+  
+* `.qmd` files containing the contents of your thesis. 
+  * You should **not** delete or rename the `index.qmd` file. It must be included as named the first rendered file of your thesis. This file includes your acknowledgements, abstract, and a reproducibility statement. Be sure to edit these sections before your final thesis submission!
+  * You should **not** delete the [*references*](03-references.qmd#references)  or the *appendix* files (@sec-code, @sec-corrections) which contain syntax and information required for proper thesis formatting, but you can and should rename them as needed.
+  * You should delete the *chapter* files and replace them with your own.
+
+* `includes` folder: contains citation style file (for formatting in-text citations and the bibliography using the ASA style) and the Amherst logo included on the cover page. Do not delete, edit, or move this folder or its contents.
+
+* `data` folder: recommended folder for storing data files
+* `fig` folder: recommended folder for storing any images, graphs, etc. 
+* `src` folder: recommended folder for storing any code scripts.
+
+:::{.callout-note}
+Items in the `data`, `fig`, and `src` folders starting with `temp` are used as examples within this template but can be deleted when you begin your own edits.
+:::
+
+* After rendering your document, you will additionally see a `_book` folder, which will contain the rendered PDF.
+
+* `references.bib`: This is a bibliography file containing bibtex-style citation information. BibTeX is a format for citations used by LaTeX, which is the language that is used in the process of rendering the document to PDF. The format uses *citation keys*, which are unique identifiers for each citation that you can customize manually or through the use of citation management software. These citation keys are what are used to make in-text cross-references throughout your thesis.
+  * You can rename the `.bib` file, just make sure to update the filename in the `_quarto.yml` file.
+  * Consider using [Zotero](https://www.zotero.org/support/) for managing all of the literature affiliated with your thesis. Amherst College has [Zotero support and free unlimited storage](https://libguides.amherst.edu/citation/zotero) through the library. 
+  * You can [set up Zotero to automatically update your `.bib` file](https://libguides.rhul.ac.uk/referencing/Zoterolatex) that contains all of your reference information. [Video setup instructions are also available](https://guides.library.yale.edu/bibtex/zotero-and-latex).
+  * [Set up an appointment with a science librarian](https://libguides.amherst.edu/subjectlibrarians#s-lg-box-31290705) at Amherst or attend one of the library's [Zotero workshops](https://libguides.amherst.edu/c.php?g=959622&p=6928473#s-lg-box-22237086) to learn more. Your thesis advisor should also be able to help.
+
+
+## Quarto workflow
+
+1.  Create and edit `.qmd` files.
+    * When naming chapter and appendix files, we recommend leading the filename with the number of its rendering order.
+    * The `index.qmd` file must remain named `index.qmd`
+    
+2.  Update the `_quarto.yml` file.
+    * Add or remove `.qmd` files to the list of `chapters` or `appendices` as appropriate. You can also temporarily comment out chapters.
+    * Save your own `.bib` file and make sure the filename is updated in `_quarto.yml`.
+
+3.  Render book
+    * Use the `Render` button at the top of any qmd file or available under the `Build` tab
+    * Type `cmd + shift + k` or  `ctrl + shift + k` while working in any of your `.qmd` files.
+    * If you would like the PDF to preview within the RStudio Viewer pane, click the gear icon next to the `Render` button at the top of any of your `.qmd` files and select **Preview in Viewer Pane.** It will change the default behavior until you make a different selection.
+    
+    ![](fig/temp_preview-viewer-pane.png){width=50% fig-align="center"}
+
+4.  Review the changes in the PDF (located in the `_book` folder) to ensure the PDF output looks as desired. 
+    Here are some common issues you might want to look for:
+    * No text, figures, tables, nor code extends into the margins
+    * Citations and cross-references are displayed correctly and linked correctly
+    * Font in figures and tables is readable
+    * All [figures and tables](https://quarto.org/docs/authoring/cross-references.html#floats) are captioned and numbered
+    * Any [equations](https://quarto.org/docs/authoring/cross-references.html#equations) that are referenced in the text should also be numbered. 
+    * Make appropriate use of Quarto's [theorem and proof](https://quarto.org/docs/authoring/cross-references.html#theorems-and-proofs) blocks when needed. 
+    * Though [callout blocks](https://quarto.org/docs/authoring/callouts.html) might be useful for inserting notes to yourself or your advisor, they are likely not appropriate for your final thesis and should be excluded.
+    * Figures are visually appealing (aspect ratio, appropriate use of aesthetics for contrast, etc.)
+    * Headings, subheadings, lists, sublists, etc. are formatted correctly. Errors are usually due to indentation or line spacing before headings or lists.
+      
+      :::{.callout-note}
+      Note: To format additional content within a list item at the same depth, the first text of the new content must align with the first text of the corresponding list item text above it. For example, the first colon `:` of this note is aligned with the first letter of the bullet point above, so this note block is indented to the same depth as that bullet point.
+      :::
+    
+    *In comparison, this text will be indented to the same depth as the text in item 4.*
+
+
+## Recommended reading before you begin editing
+
+Quarto is a powerful tool for authoring documents in multiple formats. Even if you are familiar with markdown, some behavior and syntax in Quarto markdown is slightly different (and often better) than R markdown.
+
+:::{.callout-caution}
+The code within each `.qmd` file is self-contained and rendered independently before merging the document to build the thesis, so there's no environmental memory between chapters. This means you should load required packages and datasets and set up any desired code defaults at the start of each chapter file.
+:::
+
+
+1. [Quarto Markdown Basics](https://quarto.org/docs/authoring/markdown-basics.html)
+   
+   :::{.callout-note}
+   Many options will work for both PDF and HTML formats, but your thesis must be submitted as a PDF. Pay attention to which elements work for both formats and which elements are only appropriate for HTML format. You need to prioritize the PDF rendering.
+   :::
+
+2. [Code chunk options and formatting in Quarto](https://quarto.org/docs/computations/r.html#chunk-options)
+
+   :::{.callout-note}
+   Quarto also supports other languages such as python (see the list under the Computations section of the side menu at the linked page), but may require different YAML settings in order to execute.
+   :::
+   
+   {{< pagebreak >}}
+   
+   :::{.callout-caution}
+   To ensure all of your displayed code fits within the printed code blocks without bleeding into the margins, set up RStudio to show the margin line at 73. None of your code or comments should fall past that line within your scripts or `.qmd`. In other words, no line of code should be more than 73 characters long.
+   
+   1. Go to **Tools** $\rightarrow$ **Global Options...**
+   2. Select the **Code** menu 
+   3. Choose the **Display** tab
+   4. Check **Show margin** and set **Margin column: 73**
+   
+   ![](fig/temp_show-margin.png){width=80% fig-align="center"}
+   :::
+
+{{< pagebreak >}}
+
+3. [Basics of cross-referencing in Quarto](https://quarto.org/docs/authoring/cross-references.html) chapters, sections, tables, figures, equations, etc. 
+
+4.  [How cross-referencing works in Quarto Books](https://quarto.org/docs/books/book-crossrefs.html) like this one.
+
+    To reiterate their cautions here...
+
+    :::{.callout-warning}
+    # Reserved prefixes for cross-referencing
+    Unless you are creating a cross-reference, avoid using the reserved cross-reference prefixes for code cell labels (e.g. set using the `label` code cell option) and element IDs (set using a `#` in an attribute). 
+ 
+    The reserved prefixes are: `fig`, `tbl`, `lst`, `tip`, `nte`, `wrn`, `imp`, `cau`, `thm`, `lem`, `cor`, `prp`, `cnj`, `def`, `exm`, `exr`, `sol`, `rem`, `eq`, `sec`.
+
+    You must use the reserved prefixes with their corresponding element types (start every figure label with `fig-`, start every header label with `sec-`, start every table label with `tbl-`, and so on).
+
+    Also avoid using underscores (`_`) in labels and IDs as this can cause problems when rendering to PDF with LaTeX.
+    :::   
+
+5. [Citations in Quarto](https://quarto.org/docs/authoring/citations.html)
+
+6. To follow best practices, we recommend stylizing your code and text following the [**tidyverse** style guide](https://style.tidyverse.org).
+
+7. Mathematical expressions in PDF documents require LaTeX formatting within inline and display style equations. Rice University provides a convenient list of [LaTeX mathematical symbols](https://www.cmor-faculty.rice.edu/~heinken/latex/symbols.pdf) for your reference.
+
+   :::{.callout-note}
+   Letters in math mode are individual variables. If you want to write text in math modes such as distribution names, words, etc, then you should use LaTeX commands to do so.
+   
+   It is best practice to include any distribution names within `\operatorname{}`. 
+   For example, we might write $X \sim \operatorname{Normal}(\mu,\, \sigma^2)$. 
+   
+   When otherwise writing text within an equation, use `\text{}` or `\textit{}` for upright or italic text, respectively. For example:
+   $$
+   R^2 = 1 - \frac{\text{SSE}}{\text{SST}}.
+   $$
+   
+   Finally, to get parentheses and brackets to match the size of their contents, make use of the `\left` and `\right` commands. Compare the two following examples
+   
+   1. Without `\left` and `\right` 
+   $$
+   f(x) = \frac{1}{\sqrt{2 \pi \sigma^2}} 
+          \exp [-\frac{1}{2} (\frac{x - \mu}{\sigma})^2] 
+   $$
+   
+   2. With `\left` and `\right` 
+   $$
+   f(x) = \frac{1}{\sqrt{2 \pi \sigma^2}} 
+          \exp \left[-\frac{1}{2} \left(\frac{x - \mu}{\sigma}\right)^2 \right] 
+   $$
+   :::
+
+   
+See the [Comprehensive Quarto Guide](https://quarto.org/docs/guide/) for more advanced details. See @sec-simple for some simple examples.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

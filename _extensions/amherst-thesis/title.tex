@@ -1,0 +1,43 @@
+%% See Amherst College Thesis Guide
+%% https://www.amherst.edu/academiclife/registrar/for-students/thesis_guide
+% For Interdisciplinary majors, the statement should read "Submitted to the Department of Special Programs of Amherst College in partial fulfillment of the requirements for the degree of Bachelor of Arts with honors." 
+% For those students submitting a thesis in either Greek or Latin, please print the statement in the following manner: "Submitted to the Department of Classics of Amherst College in partial fulfillment of the requirements for the degree of Bachelor of Arts with honors in Greek/Latin."
+\def\maketitle{
+\pagenumbering{roman}
+{\thispagestyle{empty}%
+  \null\vskip 1in
+  \begin{center}\fontsize{24}{28}\sf
+     \textbf{$title$}\\[2cm]
+     \fontsize{18}{20}\sf $author$\\[0.2cm]
+     
+     \vfill
+     
+     \includegraphics[height=1.15in]{includes/Amherst-College-wordmark-seal-centered-purple-RGB-900px.png}
+     \vskip 0.5in
+     \fontsize{13}{15}\sf Submitted to the Department of $department$\\
+     of Amherst College in partial fulfillment of the requirements \\
+     for the degree of Bachelor of Arts with honors.\\
+     \vskip 0.5in
+     Advisor(s):\\
+     \fontsize{13}{15}\sf $advisors$
+    \vskip 0.5in
+    $date$
+  \end{center}
+  \newpage\mbox{}\thispagestyle{empty}\newpage
+}
+}
+
+% Title and date
+
+$if(title)$
+\title{$title$}
+$endif$
+$if(subtitle)$
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{$subtitle$}
+$endif$

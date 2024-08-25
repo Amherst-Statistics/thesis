@@ -1,0 +1,35 @@
+project:
+  type: book
+  
+book:
+  # Update info below with your info and the date
+  output-file: "your-name_thesis_20yy-mm-dd" 
+  title: "Informative thesis title"
+  author: "Your Name"
+  # `today` date option will automatically print the date of rendering
+  date: today
+  date-format: MMMM D, YYYY
+  chapters:
+    - text: "Authorship, Abstract, Acknowledgements"
+      file: index.qmd 
+    # Add/remove and edit file names and order as you go
+    - 01-ch1-intro.qmd
+    - 02-ch2-simple-example.qmd
+    # References must be the last file before the appendices
+    - 03-references.qmd 
+  appendices:
+    - 04-app1-code.qmd # Must include
+    # Must include if corrections are made after initial submission
+    - 05-app2-corrections.qmd 
+
+# Replace this file with your .bib file
+bibliography: references.bib 
+# Do not remove this file
+csl: includes/american-statistical-association.csl 
+# Update department, advisors, and submission year with your information
+department: "Mathematics and Statistics"
+advisors: "List advisor names here"
+submitted: 2024
+
+format:
+  amherst-thesis-pdf: default

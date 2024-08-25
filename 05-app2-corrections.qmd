@@ -1,0 +1,14 @@
+# Corrections {#sec-corrections}
+
+This section may be excluded if no corrections are made to your thesis after initial submission to the department and before final submission to the college.
+
+Per the [Statistics Honors Thesis Regulations](https://www.amherst.edu/academiclife/departments/mathematics-statistics/major-in-statistics/honors-in-statistics/thesis-regulations):
+
+> Corrections to theses may be made after the date on which they are due in the Department's hands.  Corrections may be made to the body of the thesis, but every such correction will be acknowledged in a list under the heading "Corrections," along with the statement "When originally submitted, this honors thesis contained some errors which have been corrected in the current version.  Here is a list of the errors that were corrected."  This list will be given on a sheet or sheets to be appended to the thesis.  Corrections to spelling, grammar, or typography may be acknowledged by a general statement such as "30 spellings were corrected in various places in the thesis, and the notation for definite integral was changed in approximately 10 places." However, any correction that affects the meaning of a sentence or paragraph should be described in careful detail, and substantial additions to the thesis will not be allowed.  Questions about what should appear in the "Corrections" should be directed to the Chair.  Electronic versions of the thesis, technical appendix, and necessary data and supplemental files must all be updated at the time of correction as well.
+
+<!-- Begin corrections below -->
+
+When originally submitted, this honors thesis contained some errors which have been corrected in the current version.  Here is a list of the errors that were corrected.
+
+1. ...
+2. ...
