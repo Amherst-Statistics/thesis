@@ -2,6 +2,15 @@
 
 This template uses a Quarto Book project to generate your thesis document. This document includes important information about how to navigate this project directory and use the Quarto Book project. 
 
+To use the [Amherst College Statistics Thesis Template](https://github.com/Amherst-Statistics/thesis?tab=readme-ov-file#amherst-college-statistics-thesis-template), do **one** of the following:
+
+* Download the repo.
+* Fork the repo.
+* Using the command line or terminal, go to the directory where you want your thesis project directory to be stored and run the following to copy the contents of the repo:
+
+  ```markdown
+  quarto use template Amherst-Statistics/thesis
+  ```
 
 ## What's in this project directory?
 
@@ -46,11 +55,16 @@ Items in the `data`, `fig`, and `src` folders starting with `temp` are used as e
     * Save your own `.bib` file and make sure the filename is updated in `_quarto.yml`.
 
 3.  Render book
-    * Use the `Render` button at the top of any qmd file or available under the `Build` tab
-    * Type `cmd + shift + k` or  `ctrl + shift + k` while working in any of your `.qmd` files.
+    * Type `cmd + shift + k` or  `ctrl + shift + k` while working in any of your `.qmd` files, use the `Render` button at the top of any `.qmd` file, or use the `Render` button available under the `Build` tab.
     * If you would like the PDF to preview within the RStudio Viewer pane, click the gear icon next to the `Render` button at the top of any of your `.qmd` files and select **Preview in Viewer Pane.** It will change the default behavior until you make a different selection.
     
     ![](fig/temp_preview-viewer-pane.png){width=50% fig-align="center"}
+    
+    :::{.callout-note}
+    Rendering any `.qmd` file will render the *entire* project (all files listed under `chapters` in the `_quarto.yml`).
+    
+    If you want to focus on one particular chapter without running code in or rendering other chapters, delete or comment out the other chapter files in `_quarto.yml`. The `index.qmd` file must always be included in the rendering list, though.
+    :::
 
 4.  Review the changes in the PDF (located in the `_book` folder) to ensure the PDF output looks as desired. 
     Here are some common issues you might want to look for:
@@ -65,7 +79,7 @@ Items in the `data`, `fig`, and `src` folders starting with `temp` are used as e
     * Headings, subheadings, lists, sublists, etc. are formatted correctly. Errors are usually due to indentation or line spacing before headings or lists.
       
       :::{.callout-note}
-      Note: To format additional content within a list item at the same depth, the first text of the new content must align with the first text of the corresponding list item text above it. For example, the first colon `:` of this note is aligned with the first letter of the bullet point above, so this note block is indented to the same depth as that bullet point.
+      To format additional content within a list item at the same depth, the first text of the new content must align with the first text of the corresponding list item text above it. For example, the first colon `:` of this callout block is aligned with the first letter of the bullet point above.
       :::
     
     *In comparison, this text will be indented to the same depth as the text in item 4.*
@@ -80,14 +94,14 @@ The code within each `.qmd` file is self-contained and rendered independently be
 :::
 
 
-1. [Quarto Markdown Basics](https://quarto.org/docs/authoring/markdown-basics.html)
+1. [Quarto Markdown Basics](https://quarto.org/docs/authoring/markdown-basics.html), how to  [use inline code](https://quarto.org/docs/computations/inline-code.html) with the Knitr engine, and more details on [including external figures](https://quarto.org/docs/authoring/figures.html).
    
    :::{.callout-note}
    Many options will work for both PDF and HTML formats, but your thesis must be submitted as a PDF. Pay attention to which elements work for both formats and which elements are only appropriate for HTML format. You need to prioritize the PDF rendering.
    :::
 
-2. [Code chunk options and formatting in Quarto](https://quarto.org/docs/computations/r.html#chunk-options)
-
+2. [How to specify code chunk options in Quarto](https://quarto.org/docs/computations/r.html#chunk-options) and the [list of code chunk options](https://quarto.org/docs/computations/execution-options.html) (the Quarto Book is rendered using the KnitR engine so you can follow links on the latter page to see additional options). The document-level defaults set `echo`, `warning` and `message` to `false` (specified in `_extensions/amherst-thesis/_extension.yml`).
+          
    :::{.callout-note}
    Quarto also supports other languages such as python (see the list under the Computations section of the side menu at the linked page), but may require different YAML settings in order to execute.
    :::
@@ -109,7 +123,7 @@ The code within each `.qmd` file is self-contained and rendered independently be
 
 3. [Basics of cross-referencing in Quarto](https://quarto.org/docs/authoring/cross-references.html) chapters, sections, tables, figures, equations, etc. 
 
-4.  [How cross-referencing works in Quarto Books](https://quarto.org/docs/books/book-crossrefs.html) like this one.
+4.  [How cross-referencing works in Quarto Book projects](https://quarto.org/docs/books/book-crossrefs.html) like this one.
 
     To reiterate their cautions here...
 

@@ -1,6 +1,6 @@
 # Abstract {.unnumbered} 
 
-The abstract should be a short, one-paragraph summary of your thesis work. If it extends onto a second page, it is too long.
+The abstract should be a short, one-paragraph (~100--300 words) summary of your thesis work.
 
 
 

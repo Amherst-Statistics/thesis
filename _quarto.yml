@@ -10,7 +10,7 @@ book:
   date: today
   date-format: MMMM D, YYYY
   chapters:
-    - text: "Authorship, Abstract, Acknowledgements"
+    - text: "Front matter"
       file: index.qmd 
     # Add/remove and edit file names and order as you go
     - 01-ch1-intro.qmd
