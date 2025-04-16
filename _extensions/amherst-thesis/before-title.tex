@@ -5,3 +5,11 @@
 \usepackage[scaled=1.04,varqu,varl]{inconsolata}% inconsolata typewriter
 \usepackage[type1]{sourcesanspro}% sans serif
 \usepackage[uprightscript,charter,vvarbb,scaled=1.05]{newtxmath}
+
+% Make code single-spaced and printed smaller than main font
+\AtBeginEnvironment{Shaded}{\singlespacing\small}
+
+% Make chapter title font smaller and single-spaced
+\usepackage{sectsty}
+\chapternumberfont{\huge\singlespacing} 
+\chaptertitlefont{\huge\singlespacing}
