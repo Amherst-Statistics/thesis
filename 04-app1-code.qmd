@@ -15,49 +15,77 @@ This work is licensed under a [Creative Commons  Attribution-NonCommercial-Share
 
 
 <!--
-Include all source code below.
+Include all source code below, preferably with a separate subsection per chapter. 
 
-Unfortunately, the `ref-label: !expr knitr::all_labels()` code chunk option (see the end of `02-ch2-simple-example.qmd` for an example) can print all code within the same .qmd file but *cannot* pull code from other .qmd files within a project (see https://github.com/quarto-dev/quarto-cli/discussions/6650). 
-
-
-If you don't want to use that approach to display the source code at the end of each individual chapter, then you can manually copy and paste code chunks here, preferably one subsection per chapter. For example:
-
-## Source code for chapter 2:
-
-### Code used to generate tables and figures 
-```{r}
-#| echo: true
-#| eval: false
-
-Paste your R code
-```
-
-### Code sourced from external scripts
-
-```{r}
-#| echo: true
-#| eval: false
-
-{{< include source/temp01-clean-wnba.R >}}
-```
-
+The `save-code-chunks-to-scripts` code chunk will generate R scripts from the code chunks in the specified qmd files. Those R scripts will then be sourced and printed (but not evaluated) in the corresponding subsections below. CAUTION: `knitr::purl()` will pull in ALL code chunks, even if they are not evaluated. Be sure to remove any unevaluated code chunks prior to your final thesis submission.
 -->
 
+```{r}
+#| label: save-code-chunks-to-scripts
+#| include: false
 
-## Code sourced from external scripts
+# ==============================================================================
+# RUN THIS CHUNK PRIOR TO RENDERING BOOK TO CREATE FIRST VERSION OF R SCRIPT(S).
+# ==============================================================================
+# Oddly, this code seems to run *after* the rendering process, so you will need
+# to run this chunk once to create an initial version of the R script(s). 
+# After that, the R scripts will automatically update when you re-render the book.
+# You may have to render twice for updated code to appear in the rendered PDF---
+# Run 1 updates the script(s), Run 2 shows the updated script(s) in the book.
+# Alternatively, you can run this code chunk to update any script(s) prior to
+# rendering the PDF. 
+# ==============================================================================
+
+# Save Ch 2 qmd code chunks to R script
+knitr::purl(input = "02-ch2-simple-example.qmd",
+            output = "source/temp03-code-chunks-ch2.R", 
+            # documentation values:
+            # 1 = include chunk options when rendering (recommended default)
+            #     (long dashed horizontal line will shorten after re-rendering)
+            # 0 = include code only
+            documentation = 1)
+
+# Repeat for each chapter with code chunks, and then source the R scripts
+# in the relevant subsections below.
+
+```
+
+
+
+
+## Code from @sec-simple
+
+### Code required to clean WNBA data
 
 ```{r}
+#| label: print-wrangling-code
 #| echo: true
 #| eval: false
 
 {{< include source/temp01-clean-wnba.R >}}
 ```
 
+### Code used to generate tables and figures
+
 ```{r}
+#| label: print-ch2-code-chunks
+#| echo: true
+#| eval: false
+
+{{< include source/temp03-code-chunks-ch2.R >}}
+```
+
+
+
+## Code for simulation study
+
+```{r}
+#| label: print-simulation-code
 #| echo: true
 #| eval: false
 
 {{< include source/temp02-hello.R >}}
 ```
+
 
 

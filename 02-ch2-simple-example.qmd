@@ -76,30 +76,3 @@ Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapi
 
 Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
 
-
-
-<!-- 
-The code chunk in the subsection below does two things:
-
-(1) The code chunk option `ref-label: !expr knitr::all_labels()` is a way to print the code from all code chunks within this qmd file. CAUTION: This will include code from ALL code chunks, even those where `eval` is set to `false`.
-
-(2) The line `{{< include source/temp01-clean-wnba.R >}}` additionally prints the external R script used to clean the data that was initially loaded at the start of this chapter. 
-
-If you are using this approach to show your source code in your thesis, then this type of subsection should be included at the end of each chapter that contains code. 
-
-Alternatively, you can manually copy and paste evaluated code chunks from each chapter in the appendix (see `04-app1-code.qmd`).
-
--->
-
-## @sec-simple Code
-
-The following code was used to create @sec-simple.
-
-```{r}
-#| echo: true
-#| eval: false
-#| ref-label: !expr knitr::all_labels()
-
-{{< include source/temp01-clean-wnba.R >}}
-```
-

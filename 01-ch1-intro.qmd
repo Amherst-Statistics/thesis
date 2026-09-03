@@ -32,7 +32,7 @@ To use the [Amherst College Statistics Thesis Template](https://github.com/Amher
 * `source` folder: recommended folder for storing any code scripts.
 
 :::{.callout-note}
-Items in the `data`, `fig`, and `src` folders starting with `temp` are used as examples within this template but can be deleted when you begin your own edits.
+Items in the `data`, `figures`, and `source` folders starting with `temp` are used as examples within this template but can be deleted when you begin your own edits.
 :::
 
 * After rendering your document, you will additionally see a `_book` folder, which will contain the rendered PDF.
