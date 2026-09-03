@@ -13,28 +13,51 @@ This thesis is written using Quarto with **renv** [@renv] to create a reproducib
 
 This work is licensed under a [Creative Commons  Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
 
-<!--
-
-https://github.com/quarto-dev/quarto-cli/discussions/6650
-
-The type of code chunk below will correctly print all code within the same .qmd file but *cannot* pull code from other .qmd files within a project.
-
--->
 
 <!--
-Include all source code below
--->
+Include all source code below.
+
+Unfortunately, the `ref-label: !expr knitr::all_labels()` code chunk option (see the end of `02-ch2-simple-example.qmd` for an example) can print all code within the same .qmd file but *cannot* pull code from other .qmd files within a project (see https://github.com/quarto-dev/quarto-cli/discussions/6650). 
+
+
+If you don't want to use that approach to display the source code at the end of each individual chapter, then you can manually copy and paste code chunks here, preferably one subsection per chapter. For example:
+
+## Source code for chapter 2:
+
+### Code used to generate tables and figures 
 ```{r}
 #| echo: true
 #| eval: false
-{{< include src/temp01-clean-wnba.R >}}
+
+Paste your R code
+```
+
+### Code sourced from external scripts
+
+```{r}
+#| echo: true
+#| eval: false
+
+{{< include source/temp01-clean-wnba.R >}}
+```
+
+-->
+
+
+## Code sourced from external scripts
+
+```{r}
+#| echo: true
+#| eval: false
+
+{{< include source/temp01-clean-wnba.R >}}
 ```
 
 ```{r}
 #| echo: true
 #| eval: false
-{{< include src/temp02-hello.R >}}
-```
 
+{{< include source/temp02-hello.R >}}
+```
 
 
