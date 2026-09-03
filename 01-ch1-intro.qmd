@@ -28,8 +28,8 @@ To use the [Amherst College Statistics Thesis Template](https://github.com/Amher
 * `includes` folder: contains citation style file (for formatting in-text citations and the bibliography using the ASA style) and the Amherst logo included on the cover page. Do not delete, edit, or move this folder or its contents.
 
 * `data` folder: recommended folder for storing data files
-* `fig` folder: recommended folder for storing any images, graphs, etc. 
-* `src` folder: recommended folder for storing any code scripts.
+* `figures` folder: recommended folder for storing any images, graphs, etc. 
+* `source` folder: recommended folder for storing any code scripts.
 
 :::{.callout-note}
 Items in the `data`, `fig`, and `src` folders starting with `temp` are used as examples within this template but can be deleted when you begin your own edits.
@@ -58,7 +58,7 @@ Items in the `data`, `fig`, and `src` folders starting with `temp` are used as e
     * Type `cmd + shift + k` or  `ctrl + shift + k` while working in any of your `.qmd` files, use the `Render` button at the top of any `.qmd` file, or use the `Render` button available under the `Build` tab.
     * If you would like the PDF to preview within the RStudio Viewer pane, click the gear icon next to the `Render` button at the top of any of your `.qmd` files and select **Preview in Viewer Pane.** It will change the default behavior until you make a different selection.
     
-    ![](fig/temp_preview-viewer-pane.png){width=50% fig-align="center"}
+    ![](figures/temp_preview-viewer-pane.png){width=50% fig-align="center"}
     
     :::{.callout-note}
     Rendering any `.qmd` file will render the *entire* project (all files listed under `chapters` in the `_quarto.yml`).
@@ -116,7 +116,7 @@ The code within each `.qmd` file is self-contained and rendered independently be
    3. Choose the **Display** tab
    4. Check **Show margin** and set **Margin column: 73**
    
-   ![](fig/temp_show-margin.png){width=80% fig-align="center"}
+   ![](figures/temp_show-margin.png){width=80% fig-align="center"}
    :::
 
 {{< pagebreak >}}
