@@ -2,8 +2,9 @@ project:
   type: book
   
 book:
-  # Update info below with your info and the date
-  output-file: "your-name_thesis_20yy-mm-dd" 
+  # Update info below with your info. Add the date on the end of the filename 
+  # when submitting to the chair and to the college (and updates to your advisor)
+  output-file: "your-name_thesis" 
   title: "Informative thesis title"
   author: "Your Name"
   # `today` date option will automatically print the date of rendering
@@ -27,9 +28,9 @@ bibliography: references.bib
 # Do not remove this file
 csl: includes/american-statistical-association.csl 
 # Update department, advisors, and submission year with your information
-department: "Mathematics and Statistics"
-advisors: "List advisor names here"
-submitted: 2024
+department: "Statistics"
+advisors: "List advisor name(s) here"
+submitted: 2027
 
 format:
   amherst-thesis-pdf: default

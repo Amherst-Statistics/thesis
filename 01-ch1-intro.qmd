@@ -55,7 +55,7 @@ Items in the `data`, `figures`, and `source` folders starting with `temp` are us
     * Save your own `.bib` file and make sure the filename is updated in `_quarto.yml`.
 
 3.  Render book
-    * Type `cmd + shift + k` or  `ctrl + shift + k` while working in any of your `.qmd` files, use the `Render` button at the top of any `.qmd` file, or use the `Render` button available under the `Build` tab.
+    * Type `cmd + shift + k` or  `ctrl + shift + k` while working in any of your `.qmd` files, or use the `Render` button at the top of any `.qmd` file, or use the `Render Book` button available under the `Build` tab.
     * If you would like the PDF to preview within the RStudio Viewer pane, click the gear icon next to the `Render` button at the top of any of your `.qmd` files and select **Preview in Viewer Pane.** It will change the default behavior until you make a different selection.
     
     ![](figures/temp_preview-viewer-pane.png){width=50% fig-align="center"}
