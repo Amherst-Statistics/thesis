@@ -10,8 +10,23 @@ Use this space to acknowledge and thank those who have helped you in the thesis 
 
 
 
-
 <!--
-The following line is required to transition from roman numeral page numbering to regular page numbering. Do not edit or remove. 
+The block below is required to print the table of contents, list of figures, and list of tables, and then transition from roman numeral page numbering to regular page numbering. Do not edit or remove. 
 -->
+
+\cleardoublepage
+
+\setstretch{1}
+\hypersetup{linkcolor=blue}
+\setcounter{tocdepth}{2}
+\tableofcontents
+\addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures
+\addcontentsline{toc}{chapter}{List of Tables}
+\listoftables
+
+
 \cleardoublepage\pagenumbering{arabic}\setcounter{page}{1}
+
+\setstretch{2}
+

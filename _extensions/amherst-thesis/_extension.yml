@@ -1,6 +1,6 @@
 title: Amherst Thesis Format Template
 author: Brittney Bailey
-version: 2.0.0
+version: 3.0.0
 contributes:
   formats:
     pdf:
@@ -15,14 +15,22 @@ contributes:
       - top=1in
       - bottom=1in
       - heightrounded
+      indent: true
       number-sections: true
       number-depth: 2
-      toc-depth: 2
+      toc: false
+      lof: false
+      lot: false
+      # toc-depth: 2
       # Font options
       block-headings: false
       colorlinks: true
       fontsize: 11pt
       linestretch: 2
+      # Customizing Quarto LaTeX template:
+      # OG: https://github.com/quarto-dev/quarto-cli/blob/main/src/resources/formats/pdf/pandoc/template.tex
+      # How to: https://quarto.org/docs/journals/templates.html#latex-partials
+      # Original partials: https://github.com/quarto-dev/quarto-cli/tree/main/src/resources/formats/pdf/pandoc
       template-partials:
         - "before-title.tex"
         - "title.tex"
@@ -34,8 +42,9 @@ contributes:
           echo: false
           warning: false
           message: false
+      # Comment the line below to remove the code line numbers
       code-line-numbers: true
-      code-block-bg: "#f8f8f8"
       # Uncomment the line below if you want a code block border
       # code-block-border-left: "#cec4e3"
-      highlight-style: atom-one
+      highlight-style: arrow
+
