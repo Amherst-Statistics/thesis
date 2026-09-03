@@ -9,7 +9,13 @@
 % Make code single-spaced and printed smaller than main font
 \AtBeginEnvironment{Shaded}{\singlespacing\small}
 
-% Make chapter title font smaller and single-spaced
+% Single-spaced headings and smaller chapter title font
 \usepackage{sectsty}
+\allsectionsfont{\singlespacing}
 \chapternumberfont{\huge\singlespacing} 
 \chaptertitlefont{\huge\singlespacing}
+
+% Place chapter titles on same line as chapter numbers
+\usepackage{titlesec}
+\titleformat{\chapter}[block] 
+{\normalfont\huge\bfseries\singlespacing}{\chaptertitlename\ \thechapter:}{1em}{} 
